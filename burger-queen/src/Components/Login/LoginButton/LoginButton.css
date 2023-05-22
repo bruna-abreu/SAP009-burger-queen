@@ -1,0 +1,18 @@
+.loginBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginButton {
+    background-color: #FF5800;
+    color: white;
+    border-radius: 20px;
+    width: 60vw;
+    height: 6.5vh;
+    font-size: 30px;
+    margin-top: 2rem;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+}

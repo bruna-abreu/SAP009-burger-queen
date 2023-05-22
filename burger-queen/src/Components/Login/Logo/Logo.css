@@ -1,0 +1,10 @@
+.logoSection {
+   display: flex;
+   justify-content: center;
+}
+
+.logo {
+    width: 80vw;
+    display: flex;
+    margin-left: 5rem;
+}
