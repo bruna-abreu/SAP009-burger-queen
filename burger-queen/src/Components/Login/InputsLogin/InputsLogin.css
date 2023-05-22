@@ -1,0 +1,75 @@
+/* .mySection {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputLogin {
+    display: block;
+    border-radius: 20px;
+    width: 70vw;
+    height: 6vh;
+    font-size: 30px;
+    color: #5b5b5b;
+    margin-bottom: 5rem;
+    position: relative;
+    padding: 10px 10px 10px 15px;
+    text-align: center;
+}
+
+
+.labelEmail {
+    width: 50%;
+    color: #FF5800;
+    font-weight: bold;
+    top: 0; bottom: 0; left: 0; right: 0;
+    transition: 0.5s;
+    text-align: center;
+}
+
+
+.labelSenha {
+    display: block;
+    align-items: flex-start;
+    margin-bottom: 5px;
+    width: 50%;
+    font-size: 30px;
+    color: #FF5800;
+    font-weight: bold;
+    
+}
+ */
+
+ .mySection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  label {
+    align-self: flex-start;
+    margin-bottom: 5px;
+    color: #FF5800;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  .inputLogin {
+    border-radius: 20px;
+    width: 60vw;
+    height: 6.5vh;
+    font-size: 30px;
+    color: #5b5b5b;
+    margin-bottom: 1rem;
+    position: relative;
+    text-align: center;
+  }
+  
