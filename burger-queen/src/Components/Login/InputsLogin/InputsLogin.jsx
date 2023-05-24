@@ -1,23 +1,24 @@
 import './InputsLogin.css'
 
-const InputsLogin = () => {
+const InputsLogin = (props) => {
     return (
-/*         <section className='mySection'>
-        <label for="inputEmail" className='labelEmail'>Email</label>
-        <input type="email" className="inputLogin" id="inputEmail" aria-label="Email" placeholder="usuario@email.com" />
-        <label for="inputSenha" className='labelSenha'>Senha</label>
-        <input type="password" className="inputLogin" id="inputSenha" aria-label="Senha" placeholder="******" />
-        </section> */
-
-        <section className='mySection'>
+    <section className='mySection'>
       <div className='form-group'>
-        <label htmlFor="inputEmail" className='labelEmail'>Email</label>
-        <input type="email" className="inputLogin" id="inputEmail" aria-label="Email" placeholder="usuario@email.com" />
+        <label htmlFor= {props.id}  className='labelSenha'>{props.label}</label>
+        <input 
+        value= {props.value} 
+        onChange= {props.onChange}
+        type= {props.type} 
+        className= {props.className}
+        id= {props.id}
+        label= {props.label}
+        placeholder= {props.placeholder}
+        />
       </div>
-      <div className='form-group'>
+      {/* <div className='form-group'>
         <label htmlFor="inputSenha" className='labelSenha'>Senha</label>
-        <input type="password" className="inputLogin" id="inputSenha" aria-label="Senha" placeholder="******" />
-      </div>
+        <input value='' type="password" className="inputLogin" id="inputSenha" aria-label="Senha" placeholder="******" />
+      </div> */}
     </section>
     )
 }
