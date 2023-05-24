@@ -1,6 +1,6 @@
-const API_URL = 'https://localhost:8080'
+const API_URL = 'http://localhost:8080'
 
-export const login = (email, password) => {
+const login = (email, password) => {
     return fetch(`${API_URL}/login`, {
         method: "POST",
         headers: {
@@ -11,3 +11,5 @@ export const login = (email, password) => {
     })
 
 }
+
+export default login

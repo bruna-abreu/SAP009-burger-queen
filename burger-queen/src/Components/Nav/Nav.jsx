@@ -1,9 +1,7 @@
-import './Nav.css'
-
 function Nav() {
     return (
-        <h1>Oi, teste</h1>
+        <h1>Oi</h1>
     )
 }
 
-export default Nav 
+export default Nav

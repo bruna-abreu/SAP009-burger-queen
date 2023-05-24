@@ -7,6 +7,7 @@ const InputsLogin = (props) => {
         <label htmlFor= {props.id}  className='labelSenha'>{props.label}</label>
         <input 
         value= {props.value} 
+        onChange= {props.onChange}
         type= {props.type} 
         className= {props.className}
         id= {props.id}

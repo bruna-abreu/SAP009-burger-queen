@@ -1,9 +1,9 @@
 import './LoginButton.css'
 
-const LoginButton = () => {
+const LoginButton = (props) => {
     return (
         <section className='loginBtn'>
-           <button className="loginButton" aria-label="Botão de Login">LOGIN</button>  
+           <button onClick={props.onClick} className="loginButton" aria-label="Botão de Login">LOGIN</button>  
         </section>
        
     )
