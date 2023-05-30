@@ -12,6 +12,7 @@
     align-items: center;
     flex-direction: column;
     margin-top: 40%;
+
 }
 
 .customBtn{
@@ -23,4 +24,15 @@
     color: white;
     font-size: 30px;
     text-align: center;
+}
+
+.btnText {
+    margin-top: 2rem;
+}
+
+.btnImage {
+    margin-left: 20rem;
+    position: relative;
+    bottom: 3.5rem;
+
 }

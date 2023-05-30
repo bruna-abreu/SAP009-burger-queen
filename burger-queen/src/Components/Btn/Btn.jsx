@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const CustomButton = ({ text, path, image, ...restProps }) => {
+const Btn = ({ text, path, image, buttonClassName, imageClassName, ...restProps }) => {
     const navigate = useNavigate();
 
   const handleClick = () => {
@@ -9,11 +9,13 @@ const CustomButton = ({ text, path, image, ...restProps }) => {
   };
 
   return (
-    <button onClick={handleClick} {...restProps}>
-      {text}
-      {image && <img src={image} alt="Imagem do botão" />}
+    <button onClick={handleClick} className={buttonClassName} {...restProps}>
+      <div className="btnText">{text}</div>
+      <div className={imageClassName}>
+        {image && <img src={image} alt="Imagem do botão" />}
+      </div>
     </button>
   );
 };
 
-export default CustomButton;
+export default Btn;

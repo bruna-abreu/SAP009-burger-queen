@@ -45,7 +45,7 @@ function FormLogin () {
 
         <Inputs 
         value= {email}
-        onChange= {(e) => setEmail(e.target.value)}
+        whenChanged= {(value) => setEmail(value)}
         type= 'email'
         id= 'inputEmail'
         label= 'Email'
@@ -55,7 +55,7 @@ function FormLogin () {
 
         <Inputs 
         value= {password}
-        onChange= {(e) => setPassword(e.target.value)}
+        whenChanged= {(value) => setPassword(value)}
         type= 'password'
         id= 'inputSenha'
         label= 'Senha'

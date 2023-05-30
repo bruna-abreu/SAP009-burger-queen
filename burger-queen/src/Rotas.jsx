@@ -8,8 +8,8 @@ import CardapioPage from './Pages/CardapioPage'
         <BrowserRouter>        
             <Routes>
                 <Route path="/" element={<Login />} />
-                <Route path="/HomePage" element={<HomePage />} /> 
-                <Route path="/Cardapio" element={<CardapioPage />} />
+                <Route path="/HomePage" element={<HomePage/>} /> 
+                <Route path="/Cardapio" element={<CardapioPage/>} />
             
             </Routes>
         </BrowserRouter>
