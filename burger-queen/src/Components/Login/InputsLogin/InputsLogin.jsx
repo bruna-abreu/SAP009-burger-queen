@@ -1,13 +1,16 @@
 import './InputsLogin.css'
 
 const InputsLogin = (props) => {
+  const whenTyped = (evento) => {
+    props.whenChanged(evento.target.value)
+  }
     return (
     <section className='mySection'>
       <div className='form-group'>
         <label htmlFor= {props.id}>{props.label}</label>
         <input 
         value= {props.value} 
-        onChange= {props.onChange}
+        onChange= {whenTyped}
         type= {props.type} 
         className= {props.className}
         id= {props.id}
@@ -15,10 +18,6 @@ const InputsLogin = (props) => {
         placeholder= {props.placeholder}
         />
       </div>
-      {/* <div className='form-group'>
-        <label htmlFor="inputSenha" className='labelSenha'>Senha</label>
-        <input value='' type="password" className="inputLogin" id="inputSenha" aria-label="Senha" placeholder="******" />
-      </div> */}
     </section>
     )
 }
