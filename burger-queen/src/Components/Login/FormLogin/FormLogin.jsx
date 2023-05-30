@@ -32,7 +32,7 @@ function FormLogin () {
                 navigate('/cozinha')
             }  
             if (loginUser.user.role === 'admin') {
-                navigate('/NavTeste')
+                navigate('/HomePage')
             }              
         } catch (erro) {
             setErro(Erro(erro.message));

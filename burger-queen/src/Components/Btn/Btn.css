@@ -1,0 +1,26 @@
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*overflow: hidden;*/
+}
+
+.homeBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40%;
+}
+
+.customBtn{
+    width: 30rem;
+    height: 6.5rem;
+    margin-bottom: 10%;
+    border-radius: 20px;
+    background-color: #FF5800;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}

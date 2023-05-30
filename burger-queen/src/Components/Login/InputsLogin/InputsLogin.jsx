@@ -4,7 +4,7 @@ const InputsLogin = (props) => {
     return (
     <section className='mySection'>
       <div className='form-group'>
-        <label htmlFor= {props.id}  className='labelSenha'>{props.label}</label>
+        <label htmlFor= {props.id}>{props.label}</label>
         <input 
         value= {props.value} 
         onChange= {props.onChange}
