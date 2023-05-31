@@ -1,5 +1,7 @@
 import Btn from '../Components/Btn/Btn.jsx'
 import '../Components/Btn/Btn.css'
+import '../Components/Home/ImgHome.css'
+
 import cardapioImage from '../Assets/cardapio-btn.png';
 import pedidosImage from '../Assets/pedidos-btn.svg'
 import ImgHome from '../Components/Home/ImgHome.jsx';
@@ -23,13 +25,15 @@ function HomePage() {
                 id="pedidos"
                 text="PEDIDOS"
                 image={pedidosImage}
-                /*path="/outra-pagina"*/
+                path="/Pedidos"
             />
+            <figure className='batata'>
+              <ImgHome />
+            </figure>
+            
         </div> 
-          <ImgHome />
+          
         </div>
-        
-       
     )
 }
 
