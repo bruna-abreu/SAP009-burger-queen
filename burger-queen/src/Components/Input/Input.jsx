@@ -1,12 +1,12 @@
-import './InputsLogin.css'
+import './Input.css'
 
-const InputsLogin = (props) => {
+const Input = (props) => {
   const whenTyped = (evento) => {
     props.whenChanged(evento.target.value)
   }
     return (
-    <section className='mySection'>
-      <div className='form-group'>
+    <section className={props.sectionClassName}>
+      <div className={props.formClassName}>
         <label htmlFor= {props.id}>{props.label}</label>
         <input 
         value= {props.value} 
@@ -22,4 +22,4 @@ const InputsLogin = (props) => {
     )
 }
 
-export default InputsLogin
+export default Input

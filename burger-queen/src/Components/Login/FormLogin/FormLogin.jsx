@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Inputs from "../InputsLogin/InputsLogin";
+import Input from "../../Input/Input.jsx"
 import LoginButton from "../LoginButton/LoginButton"
 import LogoImg from "../Logo/Logo.jsx"
 import login from "../../../API/login"
@@ -26,7 +26,7 @@ function FormLogin () {
             console.log(loginUser)
 
             if (loginUser.user.role === 'Atendimento') {
-                navigate('/Nav')
+                navigate('/HomePage')
             }
             if (loginUser.user.role === 'Cozinha') {
                 navigate('/cozinha')
@@ -43,19 +43,24 @@ function FormLogin () {
         <>
         <LogoImg/>
 
-        <Inputs 
+        <Input 
         value= {email}
         whenChanged= {(value) => setEmail(value)}
+        sectionClassName= 'mySection'
+        formClassName= 'form-group'
         type= 'email'
         id= 'inputEmail'
         label= 'Email'
         placeholder= 'usuario@email.com'
         className= 'inputLogin'
+
         />
 
-        <Inputs 
+        <Input
         value= {password}
         whenChanged= {(value) => setPassword(value)}
+        sectionClassName= 'mySection'
+        formClassName= 'form-group'
         type= 'password'
         id= 'inputSenha'
         label= 'Senha'
