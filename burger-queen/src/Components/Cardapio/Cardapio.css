@@ -1,0 +1,66 @@
+.btnCardapio {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 3rem;
+}
+
+.cafeDaManhaBtn{
+    width: 30vw;
+    height: 5.5vh;
+    border-radius: 20px;
+    background-color: #635F5F;
+    color: white;
+    font-size: 1.6rem;
+    border: none;
+    
+}
+
+.principalBtn {
+    width: 30vw;
+    height: 5.5vh;
+    border-radius: 20px;
+    background-color: #635F5F;
+    color: white;
+    font-size: 1.6rem;
+    border: none;
+}
+
+.inputCardapio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+
+.inputsCardapio {
+    border: none;
+    outline: none;
+    color: white;
+    background: transparent;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 1rem;
+    border-bottom: 1px solid #D65C1C;
+}
+
+.cardapio::placeholder {
+    color: #949494;
+  }
+
+.productsCardapio {
+    margin-left: 3rem;
+    margin-top: 3rem;
+}
+
+.productsBtn {
+    width: 20vw;
+    height: 12vh;
+    border-radius: 20px;
+    font-size: 1rem;
+    text-align: center;
+    border: none;
+    line-height: 3rem;
+    background-color: #635F5F;
+    color: white;
+}

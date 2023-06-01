@@ -14,6 +14,7 @@ function HomePage() {
               <Btn
                 buttonClassName="customBtn"
                 imageClassName="btnImage"
+                btnTextClassName="btnTextHomePage"
                 id="cardapio"
                 text="CARDÁPIO"
                 image={cardapioImage}
@@ -22,6 +23,7 @@ function HomePage() {
               <Btn
                 buttonClassName="customBtn"
                 imageClassName="btnImage"
+                btnTextClassName="btnTextHomePage"
                 id="pedidos"
                 text="PEDIDOS"
                 image={pedidosImage}

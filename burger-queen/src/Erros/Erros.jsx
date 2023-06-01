@@ -20,7 +20,7 @@ export default function Erro({ message }) {
         case 'Email format is invalid':
             return 'Formato de email inválido';
         default:
-            return 'Ocorreu algum erro';
+            return 'Ocorreu algum erro. Confira seus dados';
     }
 }
 

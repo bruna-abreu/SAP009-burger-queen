@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /*overflow: hidden;*/
+    overflow: hidden;
 }
 
 .homeBtn {
@@ -13,7 +13,7 @@
     flex-direction: column;
     margin-top: 40%;
 
-}
+} 
 
 .customBtn{
     width: 30rem;
@@ -24,9 +24,10 @@
     color: white;
     font-size: 30px;
     text-align: center;
+    border: none;
 }
 
-.btnText {
+.btnTextHomePage {
     margin-top: 2rem;
 }
 
