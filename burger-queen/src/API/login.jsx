@@ -9,7 +9,10 @@ const login = async (email, password) => {
           },
         body: JSON.stringify({email, password}),
     })
-    return response.json()
+    const data = await response.json()
+    localStorage.setItem('token', data.accessToken)
+
+    return data
 }
 
 export default login
