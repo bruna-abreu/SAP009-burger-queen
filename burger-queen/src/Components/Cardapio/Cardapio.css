@@ -49,13 +49,14 @@
   }
 
 .productsCardapio {
-    margin-left: 3rem;
+    margin-left: 2rem;
     margin-top: 3rem;
 }
 
 .productsBtn {
-    width: 20vw;
-    height: 12vh;
+    /* width: 20vw;
+    height: 12vh; */
+    width: 20%;
     border-radius: 20px;
     font-size: 1rem;
     text-align: center;
@@ -64,3 +65,57 @@
     background-color: #635F5F;
     color: white;
 }
+
+.pedidos{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    /* width: 22rem;
+    height: 50rem; */
+    width: 45%;
+    height: 46rem;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #635F5F;
+    float: right;
+    position: relative;
+    top: -9rem;
+    margin-right: 2rem;
+}
+
+.resumoPedido{
+    padding: 10px;
+    color: white;
+}
+
+.resumo{
+    font-size: 1.5rem;
+}
+
+.enviarPedidos {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+  }
+  
+.enviarPedidosBtn {
+    background-color: #D65C1C;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    width: 20rem;
+    height: 3rem;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+
+}
+
+.btnTextoEnviarPedidos {
+    font-size: 1.5rem;
+    text-align: center;
+    align-items: center;
+}
+
