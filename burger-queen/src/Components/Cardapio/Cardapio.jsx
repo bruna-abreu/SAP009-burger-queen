@@ -1,13 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Btn from '../Btn/Btn'
 import Input from '../Input/Input'
 import Products from "./Products";
 import ProductsBox from "./ProductsBox";
+import getProducts from  "../../API/menuProducts"
 import './Cardapio.css'
 
 function Cardapio() {
   const [cliente, setCliente] = useState('')
   const [mesa, setMesa] = useState('')
+  const [products, setProducts] = useState([])
+  useEffect(() => {
+    async function listProducts () {
+      const productsList = await getProducts()
+      console.log(productsList)
+      setProducts(productsList)
+    }
+    listProducts()
+  },[])
     return (
       <>
         <div className="btnCardapio">
@@ -45,14 +55,17 @@ function Cardapio() {
           />
         </div>
         <div class='productsCardapio'>
-          <Products
+          {products.map((product) => {
+            return  <Products
             squareClassName= 'squareProducts'
             itemClassName= 'productsBtn'
             productClassName= 'productsInfo'
             productNameId= 'productName'
             productPriceId= 'productPrice'
-            item= 'teste'
+            item= {product.name}
+            price= {product.price}
           />
+          })}
         </div>
         <section>
           <ProductsBox/>
