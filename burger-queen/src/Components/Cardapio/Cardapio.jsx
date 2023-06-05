@@ -2,6 +2,7 @@ import { useState } from "react";
 import Btn from '../Btn/Btn'
 import Input from '../Input/Input'
 import Products from "./Products";
+import ProductsBox from "./ProductsBox";
 import './Cardapio.css'
 
 function Cardapio() {
@@ -53,6 +54,10 @@ function Cardapio() {
             item= 'teste'
           />
         </div>
+        <section>
+          <ProductsBox/>
+        </section>
+        
       </>
     );
   }
