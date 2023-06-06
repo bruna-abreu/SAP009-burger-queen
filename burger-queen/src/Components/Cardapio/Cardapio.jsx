@@ -54,17 +54,20 @@ function Cardapio() {
             className= 'inputsCardapio'
           />
         </div>
-        <div class='productsCardapio'>
+        <div className='productsCardapio'>
           {products.map((product) => {
-            return  <Products
-            squareClassName= 'squareProducts'
-            itemClassName= 'productsBtn'
-            productClassName= 'productsInfo'
-            productNameId= 'productName'
-            productPriceId= 'productPrice'
-            item= {product.name}
-            price= {product.price}
-          />
+            return  (
+              <Products
+              squareClassName= 'squareProducts'
+              itemClassName= 'productsBtn'
+              productClassName= 'productsInfo'
+              productNameId= 'productName'
+              productPriceId= 'productPrice'
+              item= {product.name}
+              price= {product.price}
+            />
+            
+            )
           })}
         </div>
         <section>

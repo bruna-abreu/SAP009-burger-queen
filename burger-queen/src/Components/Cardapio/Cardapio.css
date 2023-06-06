@@ -49,22 +49,33 @@
   }
 
 .productsCardapio {
+    display: grid;
+    grid-template-columns: 150px 150px;
+    column-gap: 2rem;
+    row-gap: 4rem;
     margin-left: 2rem;
-    margin-top: 3rem;
+    margin-top: 4rem;
+}
+
+.squareProducts {
+    width: 50rem;
+    height: 10rem;
 }
 
 .productsBtn {
     /* width: 20vw;
     height: 12vh; */
     width: 20%;
+    height: 120%;
     border-radius: 20px;
     font-size: 1rem;
     text-align: center;
     border: none;
-    line-height: 3rem;
+    line-height: 2rem;
     background-color: #635F5F;
     color: white;
-}
+    margin-bottom: 1rem;
+} 
 
 .pedidos{
     display: flex;
@@ -81,7 +92,7 @@
     background-color: #635F5F;
     float: right;
     position: relative;
-    top: -9rem;
+    bottom: 80rem;
     margin-right: 2rem;
 }
 
@@ -108,7 +119,7 @@
     border: none;
     width: 20rem;
     height: 3rem;
-    margin-left: 2rem;
+    margin-left: 1.5rem;
     margin-bottom: 1rem;
 
 }
