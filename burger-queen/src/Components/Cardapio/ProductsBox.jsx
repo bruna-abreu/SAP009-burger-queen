@@ -32,7 +32,7 @@ export default function ProductsBox({ products, orderSummary, removeProductFromO
                 {product.name}
               </div>
               <section className='productPrice'>
-                <span>${product.price}</span>
+                <span className='priceTeste'>${product.price}</span>
                 <button className='btnExcluirPedido' onClick={() => removeProductFromOrder(product)}>Excluir</button>
               </section>
             </div>
