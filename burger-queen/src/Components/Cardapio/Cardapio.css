@@ -75,15 +75,14 @@ body {
     margin-bottom: -2rem;
 } 
 
-.pedidos{
+.pedidos {
     margin-top: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 78%;
+    width: 92%;
     border-radius: 20px;
     padding: 10px;
-    margin-bottom: 20px;
     background-color: #635F5F;
     margin-left: 3rem;
 }
@@ -112,6 +111,7 @@ body {
     width: 18rem;
     height: 3rem;
     margin-bottom: 1rem;
+    font-size: 1.2rem;
 
 }
 
@@ -134,12 +134,7 @@ body {
     list-style: none;
     margin-bottom: 1rem;
 }
-/* 
-.productPrice {
-    margin-left: 12rem; 
-    margin-top: -1.5rem;
-    margin-bottom: 0.5rem; 
-} */
+
 
 .btnExcluirPedido {
     background-color: transparent;
@@ -159,7 +154,8 @@ body {
 }
 
 .productName {
-    margin-left: -1.5rem;
+    margin-left: 0.5rem;
+    color: white;
 }
 
 .productPrice {
@@ -170,4 +166,50 @@ body {
 .priceTeste {
     margin-left: 1.5rem;
     margin-bottom: 0.5rem;
+    margin-top: 0rem;
+    color: white
+
+}
+
+.quantidade-botoes {
+    margin-left: 1rem;
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
+    color: white
+}
+
+.mais, .menos {
+    border-radius: 15rem;
+    border: none;
+    text-align: center;
+    background-color: #D65C1C;
+    color: white
+}
+
+.quantidade {
+    padding: 0.5rem;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0.5rem;
+    font-size: 1.3rem;
+    color: white;
+    color: #62EC00;
+    position: relative;
+}
+
+.total::before {
+    content: "";
+    position: absolute;
+    margin-left: -0.3rem;
+    width: 100%;
+    height: 2px;
+    background-color: #D65C1C
+  }
+  
+
+.valorTotal {
+    margin-right: 2rem;
 }
