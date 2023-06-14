@@ -4,6 +4,7 @@ import Input from '../Input/Input';
 import Products from './Products';
 import ProductsBox from './ProductsBox';
 import getProducts from '../../API/menuProducts';
+import createOrder from '../../API/getOrders'
 import './Cardapio.css';
 
 function Cardapio() {
@@ -78,6 +79,13 @@ function Cardapio() {
     setOrderSummary(updatedOrder);
   };
 
+  const enviarPedidos = () => {
+    console.log('qualquer coisa')
+    const token =  localStorage.getItem('token')
+    const userId = localStorage.getItem('userId')
+    createOrder(userId, 'Poly', 1, orderSummary, token)
+  }
+
   return (
     <>
       <div className="btnCardapio">
@@ -143,6 +151,7 @@ function Cardapio() {
             removeProductFromOrder={removeProductFromOrder}
             increaseProductQuantity={increaseProductQuantity}
             decreaseProductQuantity={decreaseProductQuantity}
+            enviarPedidos={enviarPedidos}
             />
           </section>
         </div>
