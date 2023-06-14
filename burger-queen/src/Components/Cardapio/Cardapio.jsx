@@ -15,6 +15,7 @@ function Cardapio() {
   const [activeBtn, setActiveBtn] = useState('cafeDaManha');
   const [orderSummary, setOrderSummary] = useState([]);
 
+
   useEffect(() => {
     async function listProducts() {
       const productsList = await getProducts();
@@ -79,12 +80,37 @@ function Cardapio() {
     setOrderSummary(updatedOrder);
   };
 
-  const enviarPedidos = () => {
+  /* const enviarPedidos = () => {
     console.log('qualquer coisa')
     const token =  localStorage.getItem('token')
     const userId = localStorage.getItem('userId')
     createOrder(userId, 'Poly', 1, orderSummary, token)
-  }
+  } */
+
+  const enviarPedidos = () => {
+    const token = localStorage.getItem('token');
+    const userId = localStorage.getItem('userId');
+  
+    // Criar um objeto com os dados do pedido
+    const pedido = {
+      userId: userId,
+      clientName: cliente,
+      selectValue: mesa,
+      orderResume: orderSummary,
+      token: token
+    };
+  
+    // Enviar o pedido para a função createOrder
+    createOrder(pedido.userId, pedido.clientName, pedido.selectValue, pedido.orderResume, pedido.token);
+  
+    // Limpar os inputs e o resumo do pedido após enviar o pedido
+    setCliente('');
+    setMesa('');
+    setOrderSummary([]);
+
+    //console.log(createOrder())
+  };
+  
 
   return (
     <>
@@ -111,22 +137,24 @@ function Cardapio() {
         />
       </div>
       <div className="inputCardapio">
-        <Input
-          value={cliente}
-          whenChanged={(value) => setCliente(value)}
-          type="text"
-          id="inputCliente"
-          placeholder="Nome do cliente"
-          className="inputsCardapio"
-        />
-        <Input
-          value={mesa}
-          whenChanged={(value) => setMesa(value)}
-          type="number"
-          id="inputMesa"
-          placeholder="N° da mesa"
-          className="inputsCardapio"
-        />
+      <Input
+        value={cliente}
+        whenChanged={(value) => setCliente(value)}
+        type="text"
+        id="inputCliente"
+        placeholder="Nome do cliente"
+        className="inputsCardapio"
+      />
+
+      <Input
+        value={mesa}
+        whenChanged={(value) => setMesa(value)}
+        type="number"
+        id="inputMesa"
+        placeholder="N° da mesa"
+        className="inputsCardapio"
+      />
+
       </div>
       <div className="containerCardapio">
         <div className='teste'>
