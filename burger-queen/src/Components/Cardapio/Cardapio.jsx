@@ -4,7 +4,8 @@ import Input from '../Input/Input';
 import Products from './Products';
 import ProductsBox from './ProductsBox';
 import getProducts from '../../API/menuProducts';
-import createOrder from '../../API/getOrders'
+import createOrder from '../../API/getOrders';
+import ReactModal from 'react-modal';
 import './Cardapio.css';
 
 function Cardapio() {
@@ -14,7 +15,7 @@ function Cardapio() {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [activeBtn, setActiveBtn] = useState('cafeDaManha');
   const [orderSummary, setOrderSummary] = useState([]);
-
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     async function listProducts() {
@@ -22,7 +23,9 @@ function Cardapio() {
       setProducts(productsList);
 
       // Filtrar os produtos do café da manhã
-      const cafeDaManhaProducts = productsList.filter(product => product.type === 'Café da manhã');
+      const cafeDaManhaProducts = productsList.filter(
+        (product) => product.type === 'Café da manhã'
+      );
       setFilteredProducts(cafeDaManhaProducts);
     }
     listProducts();
@@ -31,19 +34,23 @@ function Cardapio() {
   useEffect(() => {
     // Atualizar os produtos filtrados quando o botão ativo for alterado
     if (activeBtn === 'cafeDaManha') {
-      const cafeDaManhaProducts = products.filter(product => product.type === 'Café da manhã');
+      const cafeDaManhaProducts = products.filter(
+        (product) => product.type === 'Café da manhã'
+      );
       setFilteredProducts(cafeDaManhaProducts);
     } else if (activeBtn === 'principal') {
-      const principalProducts = products.filter(product => product.type === 'Principal');
+      const principalProducts = products.filter(
+        (product) => product.type === 'Principal'
+      );
       setFilteredProducts(principalProducts);
     }
   }, [activeBtn, products]);
 
   const addProductToOrder = (product) => {
-    const existingProduct = orderSummary.find(item => item.id === product.id);
+    const existingProduct = orderSummary.find((item) => item.id === product.id);
 
     if (existingProduct) {
-      const updatedOrder = orderSummary.map(item => {
+      const updatedOrder = orderSummary.map((item) => {
         if (item.id === product.id) {
           return { ...item, quantity: item.quantity + 1 };
         }
@@ -51,17 +58,17 @@ function Cardapio() {
       });
       setOrderSummary(updatedOrder);
     } else {
-      setOrderSummary(prevOrder => [...prevOrder, { ...product, quantity: 1 }]);
+      setOrderSummary((prevOrder) => [...prevOrder, { ...product, quantity: 1 }]);
     }
   };
 
   const removeProductFromOrder = (productId) => {
-    const updatedOrder = orderSummary.filter(item => item.id !== productId);
+    const updatedOrder = orderSummary.filter((item) => item.id !== productId);
     setOrderSummary(updatedOrder);
   };
 
   const increaseProductQuantity = (productId) => {
-    const updatedOrder = orderSummary.map(item => {
+    const updatedOrder = orderSummary.map((item) => {
       if (item.id === productId) {
         return { ...item, quantity: item.quantity + 1 };
       }
@@ -71,7 +78,7 @@ function Cardapio() {
   };
 
   const decreaseProductQuantity = (productId) => {
-    const updatedOrder = orderSummary.map(item => {
+    const updatedOrder = orderSummary.map((item) => {
       if (item.id === productId && item.quantity > 1) {
         return { ...item, quantity: item.quantity - 1 };
       }
@@ -80,37 +87,36 @@ function Cardapio() {
     setOrderSummary(updatedOrder);
   };
 
-  /* const enviarPedidos = () => {
-    console.log('qualquer coisa')
-    const token =  localStorage.getItem('token')
-    const userId = localStorage.getItem('userId')
-    createOrder(userId, 'Poly', 1, orderSummary, token)
-  } */
-
   const enviarPedidos = () => {
-    const token = localStorage.getItem('token');
-    const userId = localStorage.getItem('userId');
-  
-    // Criar um objeto com os dados do pedido
-    const pedido = {
-      userId: userId,
-      clientName: cliente,
-      selectValue: mesa,
-      orderResume: orderSummary,
-      token: token
-    };
-  
-    // Enviar o pedido para a função createOrder
-    createOrder(pedido.userId, pedido.clientName, pedido.selectValue, pedido.orderResume, pedido.token);
-  
-    // Limpar os inputs e o resumo do pedido após enviar o pedido
-    setCliente('');
-    setMesa('');
-    setOrderSummary([]);
+    if (orderSummary.length === 0 || !cliente || !mesa) {
+      // Exibir o modal
+      setShowModal(true);
+    } else {
+      const token = localStorage.getItem('token');
+      const userId = localStorage.getItem('userId');
 
-    //console.log(createOrder())
+      // Criar um objeto com os dados do pedido
+      const pedido = {
+        userId: userId,
+        clientName: cliente,
+        selectValue: mesa,
+        orderResume: orderSummary,
+        token: token
+      };
+    
+      // Enviar o pedido para a função createOrder
+      createOrder(pedido.userId, pedido.clientName, pedido.selectValue, pedido.orderResume, pedido.token);
+    
+      // Limpar os inputs e o resumo do pedido após enviar o pedido
+      setCliente('');
+      setMesa('');
+      setOrderSummary([]);
+    }
   };
-  
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
   return (
     <>
@@ -137,54 +143,70 @@ function Cardapio() {
         />
       </div>
       <div className="inputCardapio">
-      <Input
-        value={cliente}
-        whenChanged={(value) => setCliente(value)}
-        type="text"
-        id="inputCliente"
-        placeholder="Nome do cliente"
-        className="inputsCardapio"
-      />
+        <Input
+          value={cliente}
+          whenChanged={(value) => setCliente(value)}
+          type="text"
+          id="inputCliente"
+          placeholder="Nome do cliente"
+          className="inputsCardapio"
+        />
 
-      <Input
-        value={mesa}
-        whenChanged={(value) => setMesa(value)}
-        type="number"
-        id="inputMesa"
-        placeholder="N° da mesa"
-        className="inputsCardapio"
-      />
-
+        <Input
+          value={mesa}
+          whenChanged={(value) => setMesa(value)}
+          type="number"
+          id="inputMesa"
+          placeholder="N° da mesa"
+          className="inputsCardapio"
+        />
       </div>
       <div className="containerCardapio">
-        <div className='teste'>
-          <div className='productsCardapio'>
+        <div className="teste">
+          <div className="productsCardapio">
             {filteredProducts.map((product) => (
               <Products
-              key={product.id}
-              squareClassName="squareProducts"
-              itemClassName="productsBtn"
-              productClassName="productsInfo"
-              productNameId="productName"
-              productPriceId="productPrice"
-              item={product}
-              addProductToOrder={addProductToOrder}
+                key={product.id}
+                squareClassName="squareProducts"
+                itemClassName="productsBtn"
+                productClassName="productsInfo"
+                productNameId="productName"
+                productPriceId="productPrice"
+                item={product}
+                addProductToOrder={addProductToOrder}
               />
             ))}
           </div>
         </div>
-          <section>
-            <ProductsBox
+        <section>
+          <ProductsBox
             orderSummary={orderSummary}
             removeProductFromOrder={removeProductFromOrder}
             increaseProductQuantity={increaseProductQuantity}
             decreaseProductQuantity={decreaseProductQuantity}
             enviarPedidos={enviarPedidos}
-            />
-          </section>
+          />
+        </section>
+      </div>
+      <ReactModal
+        isOpen={showModal}
+        onRequestClose={closeModal}
+        contentLabel="Alert Modal"
+        className="modalContent"
+        overlayClassName="modalOverlay"
+      >
+        <div className="modalBody">
+          <h2 className="modalTitle">Atenção!</h2>
+          <p className="modalMessage">Por favor, preencha todos os campos e adicione pelo menos um produto ao pedido.</p>
+          <button className="modalButton" onClick={closeModal}>
+            Fechar
+          </button>
         </div>
-        </>
-      );
-    }
+      </ReactModal>
+    </>
+  );
+}
 
 export default Cardapio;
+
+     
