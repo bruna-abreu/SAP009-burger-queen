@@ -1,0 +1,64 @@
+.pedidosBtn {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+    
+}
+
+.btnPedidos {
+    background-color: #635F5F;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    padding: 0.3rem;
+    margin-top: 1.5rem;
+    width: 13rem;
+    height: 5.5vh;
+    font-size: 1.2rem
+}
+
+.cardsPedidos {
+    background-color: #FF4E4E;
+    color: white;
+    width: 20rem;
+    margin-top: 5rem;
+    margin-left: 2rem;
+    height: 5.5rem;
+    border-radius: 20px;
+}
+
+.card {
+    display: flex;
+    justify-content: space-around;
+}
+
+.paragrafoStatus, .paragrafoMesa {
+    font-size: 1.3rem;
+}
+
+.details {
+    display: flex;
+    color: black;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    margin-top: -0.5rem;
+    font-size: 0.9rem;
+}
+
+.descricaoPedidos {
+    background-color: #635F5F;
+    width: 20rem;
+    margin-top: -1.5rem;
+    position: absolute;
+    z-index: -4;
+    margin-left: -7.7rem;
+    border-radius: 20px;
+}
+
+.detalhesPedidos {
+    margin-top: 3rem;
+    margin-left: 1rem;
+    color: white;
+}

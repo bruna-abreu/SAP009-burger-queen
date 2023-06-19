@@ -16,4 +16,12 @@ body: JSON.stringify({
 })
 });
 
-export default createOrder;
+const showOrders = async (token) => fetch(`${API_URL}/orders`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+export {createOrder, showOrders};
