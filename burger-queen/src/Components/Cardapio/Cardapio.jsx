@@ -4,7 +4,7 @@ import Input from '../Input/Input';
 import Products from './Products';
 import ProductsBox from './ProductsBox';
 import getProducts from '../../API/menuProducts';
-import createOrder from '../../API/getOrders';
+import {createOrder} from '../../API/orders';
 import ReactModal from 'react-modal';
 import './Cardapio.css';
 
