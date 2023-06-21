@@ -2,7 +2,7 @@ import CardPedidos from "./CardPedidos";
 import Btn from "../Btn/Btn";
 import "./Pedidos.css"
 
-function Pedidos() {
+function Cozinha() {
     return (
       <>
       <div className="pedidosBtn">
@@ -10,19 +10,19 @@ function Pedidos() {
             buttonClassName="btnPedidos"
             btnTextClassName="btnTextNaCozinha"
             id="btnNaCozinha"
-            text="Na Cozinha"
+            text="Pendentes"
         />
         <Btn
             buttonClassName="btnPedidos"
             btnTextClassName="btnTextProntos"
             id="btnProntos"
-            text="Prontos para entrega"
+            text="Em preparo"
         />
         <Btn
             buttonClassName="btnPedidos"
             btnTextClassName="btnTextEntregues"
             id="btnEntregues"
-            text="Pedidos entregues"
+            text="Prontos"
         />
       </div>
         <CardPedidos
@@ -37,4 +37,4 @@ function Pedidos() {
     );
   }
 
-export default Pedidos
+export default Cozinha
