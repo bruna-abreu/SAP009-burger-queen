@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './Pages/Login'
 import HomePage from './Pages/HomePage'
 import CardapioPage from './Pages/CardapioPage'
-import PedidosPage from './Pages/PedidosPag'
+import PedidosCozinha from './Pages/PedidosCozinha'
 
 
  function Rotas() {
@@ -12,7 +12,7 @@ import PedidosPage from './Pages/PedidosPag'
                 <Route path="/" element={<Login />} />
                 <Route path="/HomePage" element={<HomePage/>} /> 
                 <Route path="/Cardapio" element={<CardapioPage/>} />
-                <Route path="/Pedidos" element={<PedidosPage/>} />
+                <Route path="/Pedidos" element={<PedidosCozinha/>} />
 
             
             </Routes>

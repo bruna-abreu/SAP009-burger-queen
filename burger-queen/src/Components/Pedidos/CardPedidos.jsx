@@ -3,25 +3,27 @@ import { showOrders } from '../../API/orders';
 
 function CardPedidos(props) {
   const token = localStorage.getItem('token');
-  const [pedidos, setPedidos] = useState()
+  const [pedidos, setPedidos] = useState([])
   useEffect(() => {
-    const orders = showOrders(token)
-    setPedidos(orders)
-    console.log(pedidos)
+    const listOrders = async () => {
+      const orders = await showOrders(token)
+      setPedidos(orders)
+      console.log(pedidos, orders)
+    }
+    listOrders()
   },[])
 
   return (
     <>
-     {!pedidos ? (<>Não carregou</>): (
-          <div className={props.divPaiClassName}>
+     {!pedidos ? (<p>Não carregou</p>):
+     pedidos.map((pedido) => (
+        <div className={props.divPaiClassName}>
           <div className={props.divFilhoClassName}>
             <p className={props.paragrafoStatusClassName} id={props.statusId}>  
-            {/* {props.status} */}
-            Na cozinha
+             {pedido.status}
             </p>
             <p className={props.paragrafoMesaClassName}id={props.mesaId}> 
-            {/* {props.selecValue} */}
-            Mesa: 5
+              {pedido.table} 
             </p>
           </div>
           <div className="details">
@@ -29,11 +31,12 @@ function CardPedidos(props) {
             <summary class='view-description'>Ver mais</summary>
               <div className="descricaoPedidos">
                 <div className="detalhesPedidos">
-                  <p>{pedidos.dataEntry}</p>
+                  <p>{pedido.dataEntry}</p>
+                  <p>{pedido.client}</p>
                   <p>teste</p>
-                  <p>teste</p>
-                  <p>teste</p>
-                  <p>teste</p>
+                  {pedido.products.map((product) => (
+                    <p>{product.name}</p>
+                  ))}
                 </div>
                 
               </div>
@@ -41,9 +44,10 @@ function CardPedidos(props) {
           </div>
           
         </div>
-     )}
- 
-    </>
+      ))
+          
+    }
+  </>
   );
 }
 
