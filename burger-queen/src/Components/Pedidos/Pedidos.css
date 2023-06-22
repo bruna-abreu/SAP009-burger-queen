@@ -21,21 +21,26 @@
 .cardsPedidos {
     background-color: #FF4E4E;
     color: white;
-    width: 20rem;
+    width: 40%;
     margin-top: 5rem;
     margin-left: 2rem;
-    height: 5.5rem;
     border-radius: 20px;
 }
 
 .card {
-    display: flex;
-    justify-content: space-around;
+    padding: 1rem;
+
 }
 
 .paragrafoStatus, .paragrafoMesa {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
+
+.paragrafoMesa {
+    margin-left: 17rem;
+    margin-top: -3.5rem;
+}
+
 
 .details {
     display: flex;
@@ -61,4 +66,17 @@
     margin-top: 3rem;
     margin-left: 1rem;
     color: white;
+}
+
+.btnPedidos.ativo {
+    background-color: chocolate
+}
+
+.funciona {
+    display: flex;
+    flex-direction: column;
+}
+
+.info {
+    font-size: 1.2rem;
 }
