@@ -21,7 +21,9 @@
 .cardsPedidos {
     background-color: #FF4E4E;
     color: white;
-    width: 40%;
+    min-width: 40%;
+    max-width: 40%;
+    height: fit-content;
     margin-top: 5rem;
     margin-left: 2rem;
     border-radius: 20px;
@@ -29,27 +31,16 @@
 
 .card {
     padding: 1rem;
-
 }
 
 .paragrafoStatus, .paragrafoMesa {
     font-size: 1.5rem;
+    background-color: #635F5F;
 }
 
 .paragrafoMesa {
-    margin-left: 17rem;
+    margin-left: 12rem;
     margin-top: -3.5rem;
-}
-
-
-.details {
-    display: flex;
-    color: black;
-    font-weight: bold;
-    align-items: center;
-    justify-content: center;
-    margin-top: -0.5rem;
-    font-size: 0.9rem;
 }
 
 .descricaoPedidos {
@@ -68,15 +59,55 @@
     color: white;
 }
 
+.card .info {
+    border-bottom: 1px solid #FFFFFF;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+.infoPedidos {
+    font-size: 1.2rem;
+}
+
 .btnPedidos.ativo {
     background-color: chocolate
 }
 
 .funciona {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+    margin-left: 1rem;
+    column-gap: 3rem;
 }
 
 .info {
     font-size: 1.2rem;
+}
+
+/* .prepararBtn {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    
+  } */
+  
+.btnPreparar {
+    background-color: transparent;
+    color: #6CFF03;
+    border: none;
+    width: 18rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    border-top: 1px solid #FFFFFF;
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    justify-content: center;
+
 }
