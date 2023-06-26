@@ -27,7 +27,7 @@ function HomePage() {
                 id="pedidos"
                 text="PEDIDOS"
                 image={pedidosImage}
-                path="/Pedidos"
+                path="/Atendente"
             />
             <figure className='batata'>
               <ImgHome />

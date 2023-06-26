@@ -109,5 +109,32 @@
     align-items: flex-end;
     position: relative;
     justify-content: center;
+}
 
+.btnAtendentePedidos {
+    background-color: #6CFF03;
+}
+
+.pedidosAtendenteBtn {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+    
+}
+
+.btnAtendentePedidos {
+    background-color: #635F5F;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    padding: 0.3rem;
+    margin-top: 1.5rem;
+    width: 13rem;
+    height: 5.5vh;
+    font-size: 1.2rem
+}
+
+.btnAtendentePedidos.ativo {
+    background-color: chocolate
 }
