@@ -29,7 +29,7 @@ function FormLogin () {
                 navigate('/HomePage')
             }
             if (loginUser.user.role === 'Cozinha') {
-                navigate('/cozinha')
+                navigate('/Pedidos')
             }  
             if (loginUser.user.role === 'admin') {
                 navigate('/HomePage')
