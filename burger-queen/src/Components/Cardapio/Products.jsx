@@ -4,7 +4,6 @@ export default function Products({ item, addProductToOrder }) {
   const handleClick = () => {
     addProductToOrder(item);
   };
-
   return (
     <div className="squareProducts">
       <button type="submit" onClick={handleClick} className="productsBtn">

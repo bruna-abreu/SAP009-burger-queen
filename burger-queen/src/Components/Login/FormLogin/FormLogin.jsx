@@ -15,12 +15,8 @@ function FormLogin () {
     const [erro, setErro] = useState(null)
 
     const signIn = async (e) => {
-        //previne o comprtamento padrão de um evento
         e.preventDefault()
         setErro('');
-        //console.log('funcionou')
-        //return await login(email, password)
-
         try {
             const loginUser = await login(email, password)
             console.log(loginUser)
@@ -53,7 +49,6 @@ function FormLogin () {
         label= 'Email'
         placeholder= 'usuario@email.com'
         className= 'inputLogin'
-
         />
 
         <Input

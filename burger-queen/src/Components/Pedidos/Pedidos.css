@@ -33,14 +33,15 @@
     padding: 1rem;
 }
 
-.paragrafoStatus, .paragrafoMesa {
-    font-size: 1.5rem;
-    background-color: #635F5F;
+.paragrafoStatus {
+    font-size: 1.8rem;
+    margin-left: 0.6rem;
 }
 
 .paragrafoMesa {
-    margin-left: 12rem;
-    margin-top: -3.5rem;
+    font-size: 1.8rem;
+    margin-left: 11rem;
+    margin-top: -3.8rem;
 }
 
 .descricaoPedidos {
@@ -87,12 +88,6 @@
     font-size: 1.2rem;
 }
 
-/* .prepararBtn {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    
-  } */
   
 .btnPreparar {
     background-color: transparent;

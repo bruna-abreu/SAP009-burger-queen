@@ -10,34 +10,31 @@ import './Cardapio.css';
 
 function Cardapio() {
   const [cliente, setCliente] = useState('');
-  const [mesa, setMesa] = useState('');
-  const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
-  const [activeBtn, setActiveBtn] = useState('cafeDaManha');
-  const [orderSummary, setOrderSummary] = useState([]);
-  const [showModal, setShowModal] = useState(false);
+  const [mesa, setMesa] = useState(''); 
+  const [products, setProducts] = useState([]); 
+  const [filteredProducts, setFilteredProducts] = useState([]); 
+  const [activeBtn, setActiveBtn] = useState('cafeDaManha'); 
+  const [orderSummary, setOrderSummary] = useState([]); 
+  const [showModal, setShowModal] = useState(false); 
 
-  useEffect(() => {
+  useEffect(() => { 
     async function listProducts() {
-      const productsList = await getProducts();
-      setProducts(productsList);
-
-      // Filtrar os produtos do café da manhã
+      const productsList = await getProducts(); 
+      setProducts(productsList); 
       const cafeDaManhaProducts = productsList.filter(
         (product) => product.type === 'Café da manhã'
       );
-      setFilteredProducts(cafeDaManhaProducts);
+      setFilteredProducts(cafeDaManhaProducts); 
     }
-    listProducts();
+    listProducts(); 
   }, []);
 
   useEffect(() => {
-    // Atualizar os produtos filtrados quando o botão ativo for alterado
     if (activeBtn === 'cafeDaManha') {
       const cafeDaManhaProducts = products.filter(
         (product) => product.type === 'Café da manhã'
       );
-      setFilteredProducts(cafeDaManhaProducts);
+      setFilteredProducts(cafeDaManhaProducts); 
     } else if (activeBtn === 'principal') {
       const principalProducts = products.filter(
         (product) => product.type === 'Principal'
@@ -47,18 +44,17 @@ function Cardapio() {
   }, [activeBtn, products]);
 
   const addProductToOrder = (product) => {
-    const existingProduct = orderSummary.find((item) => item.id === product.id);
-
+    const existingProduct = orderSummary.find((item) => item.id === product.id); 
     if (existingProduct) {
       const updatedOrder = orderSummary.map((item) => {
         if (item.id === product.id) {
-          return { ...item, quantity: item.quantity + 1 };
+          return { ...item, quantity: item.quantity + 1 }; 
         }
         return item;
       });
-      setOrderSummary(updatedOrder);
+      setOrderSummary(updatedOrder); 
     } else {
-      setOrderSummary((prevOrder) => [...prevOrder, { ...product, quantity: 1 }]);
+      setOrderSummary((prevOrder) => [...prevOrder, { ...product, quantity: 1 }]); 
     }
   };
 
@@ -70,7 +66,7 @@ function Cardapio() {
   const increaseProductQuantity = (productId) => {
     const updatedOrder = orderSummary.map((item) => {
       if (item.id === productId) {
-        return { ...item, quantity: item.quantity + 1 };
+        return { ...item, quantity: item.quantity + 1 }; 
       }
       return item;
     });
@@ -80,22 +76,19 @@ function Cardapio() {
   const decreaseProductQuantity = (productId) => {
     const updatedOrder = orderSummary.map((item) => {
       if (item.id === productId && item.quantity > 1) {
-        return { ...item, quantity: item.quantity - 1 };
+        return { ...item, quantity: item.quantity - 1 }; 
       }
       return item;
     });
-    setOrderSummary(updatedOrder);
+    setOrderSummary(updatedOrder); 
   };
 
   const enviarPedidos = () => {
     if (orderSummary.length === 0 || !cliente || !mesa) {
-      // Exibir o modal
-      setShowModal(true);
+      setShowModal(true); 
     } else {
-      const token = localStorage.getItem('token');
-      const userId = localStorage.getItem('userId');
-
-      // Criar um objeto com os dados do pedido
+      const token = localStorage.getItem('token'); 
+      const userId = localStorage.getItem('userId'); 
       const pedido = {
         userId: userId,
         clientName: cliente,
@@ -103,11 +96,8 @@ function Cardapio() {
         orderResume: orderSummary,
         token: token
       };
-    
-      // Enviar o pedido para a função createOrder
+
       createOrder(pedido.userId, pedido.clientName, pedido.selectValue, pedido.orderResume, pedido.token);
-    
-      // Limpar os inputs e o resumo do pedido após enviar o pedido
       setCliente('');
       setMesa('');
       setOrderSummary([]);
@@ -208,5 +198,4 @@ function Cardapio() {
 }
 
 export default Cardapio;
-
      

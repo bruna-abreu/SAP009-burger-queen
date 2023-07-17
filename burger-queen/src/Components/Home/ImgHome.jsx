@@ -1,5 +1,4 @@
 import batatinha from '../../Assets/batatinha.svg'
-//import './ImgHome.css'
 
 const ImgHome = () => {
     return (
