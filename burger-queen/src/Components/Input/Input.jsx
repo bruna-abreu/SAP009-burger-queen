@@ -17,10 +17,14 @@ const Input = (props) => {
           label={props.label}
           placeholder={props.placeholder}
         />
-
       </div>
     </section>
     )
 }
 
 export default Input
+
+
+
+
+

@@ -4,10 +4,9 @@ import Btn from '../Btn/Btn';
 import './Pedidos.css';
 
 function Cozinha() {
-  const [botaoAtivo, setBotaoAtivo] = useState('Pendente');
-
+  const [botaoAtivo, setBotaoAtivo] = useState('Pendente'); 
   const handleBotaoAtivo = (status) => {
-    setBotaoAtivo(status);
+    setBotaoAtivo(status); 
   };
 
   return (
@@ -18,21 +17,21 @@ function Cozinha() {
           btnTextClassName={`btnTextNaCozinha ${botaoAtivo === 'Pendente' ? 'laranja' : ''}`}
           id="btnNaCozinha"
           text="Pendente"
-          onClick={() => handleBotaoAtivo('Pendente')}
+          onClick={() => handleBotaoAtivo('Pendente')} 
         />
         <Btn
           buttonClassName={`btnPedidos ${botaoAtivo === 'Em preparo' ? 'ativo' : ''}`}
           btnTextClassName={`btnTextProntos ${botaoAtivo === 'Em preparo' ? 'laranja' : ''}`}
           id="btnProntos"
           text="Em preparo"
-          onClick={() => handleBotaoAtivo('Em preparo')}
+          onClick={() => handleBotaoAtivo('Em preparo')} 
         />
         <Btn
           buttonClassName={`btnPedidos ${botaoAtivo === 'Prontos' ? 'ativo' : ''}`}
           btnTextClassName={`btnTextEntregues ${botaoAtivo === 'Prontos' ? 'laranja' : ''}`}
           id="btnEntregues"
           text="Prontos"
-          onClick={() => handleBotaoAtivo('Prontos')}
+          onClick={() => handleBotaoAtivo('Prontos')} 
         />
       </div>
       <CardPedidos
@@ -42,11 +41,10 @@ function Cozinha() {
         paragrafoMesaClassName="paragrafoMesa"
         statusId="statusPedidos"
         mesaId="mesaPedidos"
-        statusAtivo={botaoAtivo}
+        statusAtivo={botaoAtivo} 
       />
     </>
   );
 }
 
 export default Cozinha;
-

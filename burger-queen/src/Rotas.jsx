@@ -15,8 +15,6 @@ import PedidosCozinha from './Pages/PedidosCozinha'
                 <Route path="/Cardapio" element={<CardapioPage/>} />
                 <Route path="/Pedidos" element={<PedidosCozinha/>} />
                 <Route path="/Atendente" element={<PedidosAtendente/>} />
-
-            
             </Routes>
         </BrowserRouter>
     )
